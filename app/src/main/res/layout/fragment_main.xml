@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="MAIN"
-        android:textSize="150sp"/>
+        android:layout_gravity="center"
+        tools:context=".MainFragment">
 
-</FrameLayout>
+        <Button
+            android:text="ADD POT"
+            android:layout_width="400dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="50dp"
+            android:id="@+id/button_addpot" android:layout_marginBottom="32dp"
+            android:layout_marginEnd="128dp"/>
+
+        <ListView
+            android:id="@+id/potList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
+        </ListView>
+    </FrameLayout>
+</layout>

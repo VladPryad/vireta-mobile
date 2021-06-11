@@ -61,14 +61,15 @@ class LoginFragment : Fragment() {
                 val url: String = "http://10.0.2.2:3000/account?username=$login&password=$password"
                 doAsync {
                     val apiResponse = URL(url).readText()
-                    Log.d("RES", apiResponse)
                     if(!JSONObject(apiResponse).getBoolean("isLoggedIn")) {
                         uiThread {
                             Toast.makeText(activity, "Unauthorized", Toast.LENGTH_LONG).show()
                         }
                     } else {
                         uiThread {
-                            view.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+                            val bundle = Bundle()
+                            bundle.putString("userInfo", apiResponse)
+                            view.findNavController().navigate(R.id.action_loginFragment_to_mainFragment, bundle)
                         }
                     }
                 }

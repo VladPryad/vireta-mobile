@@ -25,6 +25,10 @@
         <action
             android:id="@+id/action_mainFragment_to_potFragment"
             app:destination="@id/potFragment" />
+        <argument
+            android:name="userInfo"
+            app:argType="string"
+            android:defaultValue='"{}"' />
     </fragment>
     <fragment
         android:id="@+id/createFragment"
@@ -35,5 +39,9 @@
         android:id="@+id/potFragment"
         android:name="com.example.viretamobileapp.PotFragment"
         android:label="fragment_pot"
-        tools:layout="@layout/fragment_pot" />
+        tools:layout="@layout/fragment_pot" >
+        <argument
+            android:name="potId"
+            app:argType="string" />
+    </fragment>
 </navigation>
