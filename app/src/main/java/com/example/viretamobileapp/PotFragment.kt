@@ -40,7 +40,7 @@ class PotFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val props: String = arguments?.getString("potId")?: "{}"
+        val props: String = arguments?.getString("potId")?: ""
         Log.d("potId", props)
     }
 

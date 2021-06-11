@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -39,8 +40,16 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var listView = requireView().findViewById(com.example.viretamobileapp.R.id.potList) as ListView
 
+
         val props: String = arguments?.getString("userInfo")?: "{}"
         val userId: String = JSONObject(props).getString("id")
+
+        val button_add: Button = view.findViewById(com.example.viretamobileapp.R.id.button_addpot) as Button
+        button_add.setOnClickListener { viewButton: View ->
+            val bundle = Bundle()
+            bundle.putString("userId", userId)
+            view.findNavController().navigate(com.example.viretamobileapp.R.id.action_mainFragment_to_createFragment, bundle)
+        }
 
         val url: String = "http://10.0.2.2:3001/pot/user/${userId}"
         doAsync {

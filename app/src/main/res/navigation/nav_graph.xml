@@ -34,7 +34,11 @@
         android:id="@+id/createFragment"
         android:name="com.example.viretamobileapp.CreateFragment"
         android:label="fragment_create"
-        tools:layout="@layout/fragment_create" />
+        tools:layout="@layout/fragment_create" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/potFragment"
         android:name="com.example.viretamobileapp.PotFragment"
